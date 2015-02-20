@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
+development:
+  <<: *default
+  database: gtku_development
+
+test:
+  <<: *default
+  database: gtku_test
