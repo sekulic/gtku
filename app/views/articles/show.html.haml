@@ -1,46 +1,53 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @article.title
-%p
-  %b Text1:
-  = @article.text1
-  = image_tag @article.photo1(:medium)
-%p
-  %b Text2:
-  = @article.text2
-%p
-  %b Text3:
-  = @article.text3
-%p
-  %b Text4:
-  = @article.text4
-%p
-  %b Embed1:
-  = @article.embed1
-%p
-  %b Embed2:
-  = @article.embed2
-%p
-  %b Embed3:
-  = @article.embed3
-%p
-  %b Embed4:
-  = @article.embed4
-%p
-  %b P1desescription:
-  = @article.p1desescription
-%p
-  %b P2description:
-  = @article.p2description
-%p
-  %b P3description:
-  = @article.p3description
-%p
-  %b P4description:
-  = @article.p4description
-
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+.row
+  .col-lg-1
+  .col-lg-7
+    %h2=article.title
+    %span=article.created_at.to_date.to_s(:long)
+    .jus
+      %strong=article.text1
+    -unless article.photo1.blank?
+      .imageHolder
+        = image_tag article.photo1(:medium), :class => 'img-responsive'
+          -unless article.p1desescription.blank?
+          .imageHolder.caption
+            %white=article.p1desescription
+    -unless article.embed1.blank?        
+      .embed-responsive.embed-responsive-16by9
+        =article.embed1.html_safe   
+    .jus
+      %strong=article.text2
+    -unless article.photo2.blank?
+      .imageHolder
+        = image_tag article.photo2(:medium), :class => 'img-responsive'
+          -unless article.p2desescription.blank?
+          .imageHolder.caption
+            %white=article.p2desescription
+    -unless article.embed2.blank?        
+      .embed-responsive.embed-responsive-16by9
+        =article.embed2.html_safe   
+    .jus
+      %strong=article.text3
+    -unless article.photo3.blank?
+      .imageHolder
+        = image_tag article.photo3(:medium), :class => 'img-responsive'
+          -unless article.p3desescription.blank?
+          .imageHolder.caption
+            %white=article.p3desescription
+    -unless article.embed3.blank?        
+      .embed-responsive.embed-responsive-16by9
+        =article.embed3.html_safe  
+    .jus
+      %strong=article.text4
+    -unless article.photo4.blank?
+      .imageHolder
+        = image_tag article.photo4(:medium), :class => 'img-responsive'
+          -unless article.p4desescription.blank?
+          .imageHolder.caption
+            %white=article.p4desescription
+    -unless article.embed4.blank?        
+      .embed-responsive.embed-responsive-16by9
+        =article.embed4.html_safe                     
+  .col-lg-4 
+    = link_to 'Edit', edit_article_path(article)
+    \|
+    = link_to 'Back', articles_path
