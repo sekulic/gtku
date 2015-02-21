@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 gem 'pg'
+gem 'decent_exposure'
 gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails', "~> 0.8"
 gem 'therubyracer', platforms: :ruby
