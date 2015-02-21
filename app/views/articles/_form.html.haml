@@ -1,4 +1,4 @@
-= form_for @article do |f|
+= form_for @article, :html => { :class => 'form-horizontal' } do |f|
   - if @article.errors.any?
     #error_explanation
       %h2= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
@@ -6,44 +6,79 @@
         - @article.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :text1
-    = f.text_area :text1
-  .field
-    = f.label :text2
-    = f.text_area :text2
-  .field
-    = f.label :text3
-    = f.text_area :text3
-  .field
-    = f.label :text4
-    = f.text_area :text4
-  .field
-    = f.label :embed1
-    = f.text_area :embed1
-  .field
-    = f.label :embed2
-    = f.text_area :embed2
-  .field
-    = f.label :embed3
-    = f.text_area :embed3
-  .field
-    = f.label :embed4
-    = f.text_area :embed4
-  .field
-    = f.label :p1desescription
-    = f.text_field :p1desescription
-  .field
-    = f.label :p2description
-    = f.text_field :p2description
-  .field
-    = f.label :p3description
-    = f.text_field :p3description
-  .field
-    = f.label :p4description
-    = f.text_field :p4description
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :title, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :text1, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :text1, class: 'form-control'
+  .form-group
+    = f.label :photo1, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.file_field :photo1, class: 'form-control'
+  .form-group
+    = f.label :p1desescription, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :p1desescription, class: 'form-control'    
+  .form-group
+    = f.label :embed1, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :embed1, class: 'form-control'    
+    
+        
+  .form-group
+    = f.label :text2, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :text2, class: 'form-control'
+  .form-group
+    = f.label :photo2, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.file_field :photo2, class: 'form-control'
+  .form-group
+    = f.label :p2description, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :p2description, class: 'form-control'      
+  .form-group
+    = f.label :embed2, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :embed2, class: 'form-control'
+  
+  .form-group
+    = f.label :text3, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :text3, class: 'form-control'
+  .form-group
+    = f.label :photo3, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.file_field :photo3, class: 'form-control'
+  .form-group
+    = f.label :p3description, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :p3description, class: 'form-control'         
+  .form-group     
+    = f.label :embed3, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :embed3, class: 'form-control'
+    
+  .form-group
+    = f.label :text4, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :text4, class: 'form-control'
+  .form-group
+    = f.label :photo4, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.file_field :photo4, class: 'form-control'
+  .form-group
+    = f.label :p4description, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :p4description, class: 'form-control'           
+  .form-group
+    = f.label :embed4, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :embed4, class: 'form-control'
+
+  .form-group
+    .col-lg-10.col-lg-offset-2
+      =f.submit "Save article", :class => 'btn btn-primary'    
