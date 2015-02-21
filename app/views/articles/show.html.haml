@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @article.title
+%p
+  %b Text1:
+  = @article.text1
+%p
+  %b Text2:
+  = @article.text2
+%p
+  %b Text3:
+  = @article.text3
+%p
+  %b Text4:
+  = @article.text4
+%p
+  %b Embed1:
+  = @article.embed1
+%p
+  %b Embed2:
+  = @article.embed2
+%p
+  %b Embed3:
+  = @article.embed3
+%p
+  %b Embed4:
+  = @article.embed4
+%p
+  %b P1desescription:
+  = @article.p1desescription
+%p
+  %b P2description:
+  = @article.p2description
+%p
+  %b P3description:
+  = @article.p3description
+%p
+  %b P4description:
+  = @article.p4description
+
+= link_to 'Edit', edit_article_path(@article)
+\|
+= link_to 'Back', articles_path
