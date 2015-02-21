@@ -1,0 +1,12 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand
+      =image_tag("logo-gtku.png", size: "105x56")
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      %ul.nav.navbar-nav
+        %li= link_to "Home", root_path, class: 'bold-text-navbar'
+        %li= link_to "Nova Anketa", new_category_path, class: 'bold-text-navbar'
