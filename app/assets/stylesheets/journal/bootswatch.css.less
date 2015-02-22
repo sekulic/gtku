@@ -11,6 +11,48 @@ body { padding-top: 56px; }
 .navbar-brand {
   padding-top: 2px !important;
 }
+.no-underline a:hover, a:visited, a:link, a:active {
+  text-decoration: none !important;
+}
+.trPic{
+        position: relative; 
+}
+.trPic .redO{ 
+        position: absolute;  
+        bottom: 0px; 
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        color: white;
+        display: inline-block;
+        padding: 0 0 0 0 !important;
+        background:black; 
+        opacity:0; } 
+.trPic:hover .redO { opacity:0.6; }
+.panel-body {
+  padding: 0 0 0 0 !important;
+}
+.linetext {
+    text-align: center;
+}
+.linetext h1 {
+    display: inline-block;    
+}
+.linetext h1:before,
+.linetext h1:after {
+    border-top: 1px solid black;
+    display: block;
+    height: 1px;
+    content: " ";
+    width: 40%;
+    position: absolute;
+    left: 0;
+    top: 1.2em;
+}
+.linetext h1:after {
+   right: 0;  
+   left: auto; 
+}
 .jus {
 text-align: justify;  
 }

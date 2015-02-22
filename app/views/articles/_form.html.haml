@@ -1,12 +1,12 @@
-= form_for @article, :html => { :class => 'form-horizontal' } do |f|
-  - if @article.errors.any?
+= form_for article, :html => { :class => 'form-horizontal' } do |f|
+  - if article.errors.any?
     .row
       .col-lg-2
       .col-lg-8 
         .alert.alert-dismissable.alert-danger
           %strong= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
           %ul
-            - @article.errors.full_messages.each do |msg|
+            - article.errors.full_messages.each do |msg|
               %li= msg       
       .col-lg-1       
 
@@ -14,6 +14,10 @@
     = f.label :title, :class => 'col-lg-2 control-label'
     .col-lg-10
       = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :description, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :description, class: 'form-control'
   .form-group
     = f.label :text1, :class => 'col-lg-2 control-label'
     .col-lg-10

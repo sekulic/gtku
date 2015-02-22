@@ -1,45 +1,69 @@
-%h1 Listing articles
-
-%table
-  %thead
-    %tr
-      %th Title
-      %th Text1
-      %th Text2
-      %th Text3
-      %th Text4
-      %th Embed1
-      %th Embed2
-      %th Embed3
-      %th Embed4
-      %th P1desescription
-      %th P2description
-      %th P3description
-      %th P4description
-      %th
-      %th
-      %th
-      
-  %tbody
-    - articles.each do |article|
-      %tr
-        %td= article.title
-        %td= article.text1
-        %td= article.text2
-        %td= article.text3
-        %td= article.text4
-        %td= article.embed1
-        %td= article.embed2
-        %td= article.embed3
-        %td= article.embed4
-        %td= article.p1desescription
-        %td= article.p2description
-        %td= article.p3description
-        %td= article.p4description
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Article', new_article_path
+.row
+  .col-lg-1
+  .col-lg-10
+    .linetext
+      %h1='OUR STORIES'
+    .row
+    -idx = 0
+    -articles.each do |article|
+      -idx = idx + 1
+      -if(idx % 6 == 0) 
+        -idx = 1  
+      -if(idx % 5 == 0)
+        .col-lg-4
+          = link_to article_path(article) do
+            .panel.panel-primary     
+              .panel-heading 
+                %h3.panel-title.no-underline      
+                  =article.title
+              .panel-body.trPic
+                = image_tag article.photo1(:medium), :class => 'img-responsive'
+                .redO
+                  %center=article.description                           
+      -if(idx % 4 == 0)
+        .col-lg-4
+          = link_to article_path(article) do
+            .panel.panel-warning      
+              .panel-heading 
+                %h3.panel-title.no-underline      
+                  =article.title
+              .panel-body.trPic
+                = image_tag article.photo1(:medium), :class => 'img-responsive'
+                .redO
+                  %center=article.description                        
+      -elsif(idx % 3 == 0)
+        .col-lg-4
+          = link_to article_path(article) do
+            .panel.panel-danger      
+              .panel-heading 
+                %h3.panel-title.no-underline      
+                  =article.title
+              .panel-body.trPic
+                = image_tag article.photo1(:medium), :class => 'img-responsive'
+                .redO
+                  %center=article.description                         
+      -elsif(idx % 2 == 0)
+        .col-lg-4
+          = link_to article_path(article) do
+            .panel.panel-success      
+              .panel-heading 
+                %h3.panel-title.no-underline      
+                  =article.title
+              .panel-body.trPic
+                = image_tag article.photo1(:medium), :class => 'img-responsive'
+                .redO
+                  %center=article.description       
+      -elsif (idx % 1 == 0) 
+        .col-lg-4
+          = link_to article_path(article) do
+            .panel.panel-info      
+              .panel-heading 
+                %h3.panel-title.no-underline      
+                  =article.title
+              .panel-body.trPic
+                = image_tag article.photo1(:medium), :class => 'img-responsive'
+                .redO
+                  %center=article.description 
+    .row
+    = link_to 'New Article', new_article_path, :class => 'btn btn-primary'
+  .col-lg-1
