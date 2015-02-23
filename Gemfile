@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 gem 'rails', '4.1.6'
@@ -18,6 +18,8 @@ gem "cocoon"
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 gem 'shareable'
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 

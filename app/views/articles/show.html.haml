@@ -7,7 +7,7 @@
       %strong=article.text1
     -unless article.photo1.blank?
       .imageHolder
-        = image_tag article.photo1(:medium), :class => 'img-responsive'
+        = image_tag article.photo1(:medium),:width => "100%", :class => 'img-responsive'
           -unless article.p1desescription.blank?
           .imageHolder.caption
             %white=article.p1desescription

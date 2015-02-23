@@ -4,7 +4,7 @@
       .col-lg-2
       .col-lg-8 
         .alert.alert-dismissable.alert-danger
-          %strong= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+          %strong= "#{pluralize(article.errors.count, "error")} prohibited this article from being saved:"
           %ul
             - article.errors.full_messages.each do |msg|
               %li= msg       

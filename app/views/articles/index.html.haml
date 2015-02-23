@@ -3,41 +3,42 @@
   .col-lg-10
     .linetext
       %h1='OUTSTANDING UNDERSTANDING'
-    .row
     -idx = 0
-    -articles.each_slice(9) do |articles_by9|    
-      .row
-      -articles_by9.each_slice(3) do |articles_by3|
-        .col-md-4.col-xs-6
-          -articles_by3.each do |article|
-            -idx = idx + 1
-            -if(idx % 6 == 0) 
-              -idx = 1 
-            -if(idx % 5 == 0)
-              -pnl = 'panel-primary'                           
-            -elsif(idx % 4 == 0)
-              -pnl = 'panel-info'                              
-            -elsif(idx % 3 == 0)
-              -pnl = 'panel-success'                                 
-            -elsif(idx % 2 == 0)
-              -pnl = 'panel-warning'              
-            -elsif (idx % 1 == 0)
-              -pnl = 'panel-danger'            
-            .tar          
-              = link_to article_path(article) do
-                .panel{:class => pnl}     
-                  .panel-heading 
-                    %h3.panel-title.no-underline      
-                      =article.title
-                  .panel-body.trPic
-                    = image_tag article.photo1(:medium), :class => 'img-responsive'
-                    .redO
-                      %center=article.description
-              .row
-                .col-md-6.col-xs-6
-                  =article.created_at.to_date.to_s(:medium)
-                .col-md-6.col-xs-6
-                  .rgh
-                    =article.category.name 
-                                      
+    -@articles.each_slice(6) do |articles_by6|
+      .row    
+        -articles_by6.each_slice(2) do |articles_by2|  
+          .col-md-4.col-xs-6
+            -articles_by2.each do |article|
+              -idx = idx + 1
+              -if(idx % 6 == 0) 
+                -idx = 1 
+              -if(idx % 5 == 0)
+                -pnl = 'panel-primary'                           
+              -elsif(idx % 4 == 0)
+                -pnl = 'panel-info'                              
+              -elsif(idx % 3 == 0)
+                -pnl = 'panel-success'                                 
+              -elsif(idx % 2 == 0)
+                -pnl = 'panel-warning'              
+              -elsif (idx % 1 == 0)
+                -pnl = 'panel-danger'            
+              .tar          
+                = link_to article_path(article) do
+                  .panel{:class => pnl}     
+                    .panel-heading 
+                      %h3.panel-title.no-underline      
+                        =article.title
+                    .panel-body.trPic
+                      = image_tag article.photo1(:medium),:width => "100%", :class => 'img-responsive'
+                      .redO
+                        %center=article.description
+                .row
+                  .col-md-6.col-xs-6
+                    =article.created_at.to_date.to_s(:medium)
+                  .col-md-6.col-xs-6
+                    .rgh
+                      =article.category.name 
+    .row
+      .col-lg-12
+        = will_paginate @articles                                     
   .col-lg-1

@@ -52,16 +52,6 @@ ActiveRecord::Schema.define(version: 20150222142737) do
     t.integer  "category_id"
   end
 
-  create_table "articles_categories", force: true do |t|
-    t.integer  "category_id"
-    t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "articles_categories", ["article_id"], name: "index_articles_categories_on_article_id", using: :btree
-  add_index "articles_categories", ["category_id"], name: "index_articles_categories_on_category_id", using: :btree
-
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
