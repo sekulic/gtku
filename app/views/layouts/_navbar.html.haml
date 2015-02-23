@@ -10,6 +10,7 @@
     .navbar-collapse.collapse{:id => 'navbar-main'}
       %ul.nav.navbar-nav
         %li= link_to "Home", root_path, class: 'bold-text-navbar'
+      %ul.nav.navbar-nav.navbar-right
         %li= link_to "New Article", new_article_path, class: 'bold-text-navbar'
-        %li= link_to "Categories", categories_path, class: 'bold-text-navbar'
-     
+        %li= link_to "Categories", categories_path, class: 'bold-text-navbar'   
+        %li= link_to "Authors", authors_path, class: 'bold-text-navbar'                 
