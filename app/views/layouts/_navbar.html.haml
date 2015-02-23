@@ -1,11 +1,12 @@
 .navbar.navbar-default.navbar-fixed-top
   .container
-    %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar-main")
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-    %a.navbar-brand
-      =image_tag("gtku-logo-basic2.png", size: "126x56")
+    .navbar-header
+      %a.navbar-brand
+        =image_tag("gtku-logo-basic2.png", size: "126x56")  
+      %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar-main")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
     .navbar-collapse.collapse{:id => 'navbar-main'}
       %ul.nav.navbar-nav
         %li= link_to "Home", root_path, class: 'bold-text-navbar'

@@ -32,8 +32,6 @@ GEM
     aws-sdk (1.40.3)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
-    bootstrap-sass (3.0.3.0)
-      sass (~> 3.2)
     bootstrap-will_paginate (0.0.10)
       will_paginate
     builder (3.2.2)
@@ -258,7 +256,6 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
-  bootstrap-sass (~> 3.0.3.0)
   bootstrap-will_paginate (~> 0.0.10)
   capybara
   cocoon
