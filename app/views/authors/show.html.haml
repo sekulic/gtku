@@ -18,6 +18,8 @@
         -else
           %h4
             =link_to author.fullname , author.link_profile, :target => "_blank"
+          .jus
+            %strong=author.about 
       
     .alert
       =link_to 'Edit Author', edit_author_path(author), :class => 'btn btn-primary'
