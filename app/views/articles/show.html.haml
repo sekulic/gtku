@@ -61,7 +61,7 @@
                 :method => 'delete',
                 :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                 :class => 'btn btn-danger'
-    .fb-comments{:data => {:href=>"http://developers.facebook.com/docs/plugins/comments/", :numposts=>"5", :colorscheme=>"light"}}        
+    .fb-comments{:data => {:href=>"https://rocky-plateau-7514.herokuapp.com/articles/#{article.id}", :numposts=>"5", :colorscheme=>"light"}}        
   .col-lg-4.col-md-4
     .jumbotron
       .row
@@ -80,4 +80,5 @@
         -else
           %h4
             =link_to article.author.fullname , article.author.link_profile, :target => "_blank" 
-
+          .jus
+            %strong=article.author.about

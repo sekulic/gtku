@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  devise_scope :user do
+    get 'adminstration' => 'devise/sessions#new'
+  end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
