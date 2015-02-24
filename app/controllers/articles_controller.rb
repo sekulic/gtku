@@ -2,7 +2,13 @@ class ArticlesController < ApplicationController
   expose(:article, attributes: :article_params)  
   
   def index
-    @articles =Article.paginate(page: params[:page], per_page: 6).order('created_at DESC')
+    if request.get?
+      if params.has_key?(:category_id)
+        @articles =Article.where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 6).order('created_at DESC')
+      else
+        @articles =Article.paginate(page: params[:page], per_page: 6).order('created_at DESC')
+      end
+    end
   end
 
   def show
