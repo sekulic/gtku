@@ -21,7 +21,7 @@
       %strong=article.text2
     -unless article.photo2.blank?
       .imageHolder
-        = image_tag article.photo2(:medium), :class => 'img-responsive'
+        = image_tag article.photo2(:medium),:width => "100%", :class => 'img-responsive'
           -unless article.p2description.blank?
           .imageHolder.caption
             %white=article.p2description
@@ -32,7 +32,7 @@
       %strong=article.text3
     -unless article.photo3.blank?
       .imageHolder
-        = image_tag article.photo3(:medium), :class => 'img-responsive'
+        = image_tag article.photo3(:medium),:width => "100%", :class => 'img-responsive'
           -unless article.p3description.blank?
           .imageHolder.caption
             %white=article.p3description
@@ -43,7 +43,7 @@
       %strong=article.text4
     -unless article.photo4.blank?
       .imageHolder
-        = image_tag article.photo4(:medium), :class => 'img-responsive'
+        = image_tag article.photo4(:medium),:width => "100%", :class => 'img-responsive'
           -unless article.p4description.blank?
           .imageHolder.caption
             %white=article.p4description
