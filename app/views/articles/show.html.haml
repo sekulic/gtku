@@ -22,9 +22,9 @@
     -unless article.photo2.blank?
       .imageHolder
         = image_tag article.photo2(:medium), :class => 'img-responsive'
-          -unless article.p2desescription.blank?
+          -unless article.p2description.blank?
           .imageHolder.caption
-            %white=article.p2desescription
+            %white=article.p2description
     -unless article.embed2.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed2.html_safe   
@@ -33,9 +33,9 @@
     -unless article.photo3.blank?
       .imageHolder
         = image_tag article.photo3(:medium), :class => 'img-responsive'
-          -unless article.p3desescription.blank?
+          -unless article.p3description.blank?
           .imageHolder.caption
-            %white=article.p3desescription
+            %white=article.p3description
     -unless article.embed3.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed3.html_safe  
@@ -44,9 +44,9 @@
     -unless article.photo4.blank?
       .imageHolder
         = image_tag article.photo4(:medium), :class => 'img-responsive'
-          -unless article.p4desescription.blank?
+          -unless article.p4description.blank?
           .imageHolder.caption
-            %white=article.p4desescription
+            %white=article.p4description
     -unless article.embed4.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed4.html_safe
