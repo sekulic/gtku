@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   devise_scope :user do
-    get 'adminstration' => 'devise/sessions#new'
+    get 'administration' => 'devise/sessions#new'
   end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
