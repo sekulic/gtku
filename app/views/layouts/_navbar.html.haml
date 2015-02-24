@@ -14,6 +14,8 @@
         -categories.each do |category|
           %li= link_to category.name, root_path(:category_id => category.id), class: 'bold-text-navbar'
       %ul.nav.navbar-nav.navbar-right
-        %li= link_to "New Article", new_article_path, class: 'bold-text-navbar'
-        %li= link_to "Categories", categories_path, class: 'bold-text-navbar'   
-        %li= link_to "Authors", authors_path, class: 'bold-text-navbar'                 
+        -if current_user.try(:admin?)
+          %li= link_to "New Article", new_article_path, class: 'bold-text-navbar'
+          %li= link_to "Categories", categories_path, class: 'bold-text-navbar'   
+          %li= link_to "Authors", authors_path, class: 'bold-text-navbar'
+          %li= link_to "Logout", destroy_user_session_path, :method => :delete, class: 'bold-text-navbar'                

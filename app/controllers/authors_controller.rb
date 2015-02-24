@@ -1,4 +1,6 @@
 class AuthorsController < ApplicationController
+  include ApplicationHelper
+  before_action :check_isadmin?
   expose(:author, attributes: :author_params)
   expose(:authors)  
 

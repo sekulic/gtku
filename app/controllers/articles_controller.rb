@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  include ApplicationHelper
+  before_action :check_isadmin?, only: [:new, :edit, :update, :create, :destroy]
   expose(:article, attributes: :article_params)  
   
   def index

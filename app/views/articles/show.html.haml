@@ -52,14 +52,15 @@
         =article.embed4.html_safe
     %br    
       =render_shareable :buttons=> [ 'facebook','twitter', 'google_plus']
-    .alert
-      =link_to 'Edit Article', edit_article_path(article), :class => 'btn btn-primary'
-      =link_to 'Back to Articles', articles_path, :class => 'btn btn-danger'
-      =link_to t('.destroy', :default => t("helpers.links.destroy")),
-              article_path(article),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger'
+    -if current_user.try(:admin?)
+      .alert
+        =link_to 'Edit Article', edit_article_path(article), :class => 'btn btn-primary'
+        =link_to 'Back to Articles', articles_path, :class => 'btn btn-danger'
+        =link_to t('.destroy', :default => t("helpers.links.destroy")),
+                article_path(article),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger'
     .fb-comments{:data => {:href=>"http://developers.facebook.com/docs/plugins/comments/", :numposts=>"5", :colorscheme=>"light"}}        
   .col-lg-4.col-md-4
     .jumbotron

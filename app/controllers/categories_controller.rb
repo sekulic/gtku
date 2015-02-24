@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include ApplicationHelper
+  before_action :check_isadmin? 
   expose(:categories)
   expose(:category)
 

@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '4.1.6'
 gem 'pg'
+gem 'devise'
 gem 'decent_exposure'
 gem 'sass-rails', '~> 4.0.3'
 gem 'haml-rails', "~> 0.8"
