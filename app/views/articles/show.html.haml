@@ -2,9 +2,13 @@
 -content_for :description do
   = description(article.description)
 .row
+  .col-lg-12
+    .linetext
+      %h1='OUTSTANDING UNDERSTANDING'  
+.row
   .col-lg-1.col-md-1
   .col-lg-7.col-md-7
-    %h2=article.title
+    %h2.text-danger=article.title
     %span=article.created_at.to_date.to_s(:long)
     .jus
       %strong=article.text1
@@ -63,16 +67,16 @@
                 :class => 'btn btn-danger'
     .fb-comments{:data => {:href=>"https://rocky-plateau-7514.herokuapp.com/articles/#{article.id}", :numposts=>"5", :colorscheme=>"light"}}        
   .col-lg-4.col-md-4
-    .jumbotron
+    .jumbotron.jumb
       .row
         .col-md-3.col-xs-3
         .col-md-9.col-xs-9
           %p.text-danger='About Author'
       .row
-        .col-lg-1.col-md-12.col-xs-12
-        .col-lg-2.col-md-12.col-xs-12
+        .col-lg-12
+        .col-lg-12
           = image_tag article.author.photo(:thumb), size: "150x150", :class => 'img-circle'
-        .col-lg-9.col-md-12.col-xs-12
+        .col-lg-12
         -if article.author.link_profile.blank?
           %h4=article.author.fullname
           .jus
