@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contact' => 'static_pages#contact'
+  match '/send_mail', to: 'static_pages#send_mail', via: 'post'
   devise_for :users
   resources :authors
 
