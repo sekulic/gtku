@@ -5,6 +5,6 @@ class ContactMailer < ActionMailer::Base
     mail(to: rade,
          body: question,
          content_type: "text/html",
-         subject: "Massage from: #{email}")
+         subject: "Message from: #{email}")
   end
 end
