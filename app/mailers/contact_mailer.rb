@@ -1,7 +1,7 @@
 class ContactMailer < ActionMailer::Base
   default from: 'sekulic87@gmail.com'  
   def contact_email(email, question)
-    rade ="sekulic.radosav@yahoo.com"
+    rade ="ritecz_marta@yahoo.com"
     mail(to: rade,
          body: question,
          content_type: "text/html",

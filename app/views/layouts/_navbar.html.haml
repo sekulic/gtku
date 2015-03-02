@@ -18,4 +18,6 @@
           %li= link_to "New Article", new_article_path, class: 'bold-text-navbar'
           %li= link_to "Categories", categories_path, class: 'bold-text-navbar'   
           %li= link_to "Authors", authors_path, class: 'bold-text-navbar'
-          %li= link_to "Logout", destroy_user_session_path, :method => :delete, class: 'bold-text-navbar'                
+          %li= link_to "Logout", destroy_user_session_path, :method => :delete, class: 'bold-text-navbar'    
+        -else
+          %li= link_to "Contact", contact_path, class: 'bold-text-navbar'            
