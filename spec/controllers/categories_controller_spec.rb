@@ -13,8 +13,6 @@ RSpec.describe CategoriesController, :type => :controller do
     skip("Add a hash of attributes invalid for your model")
   }
 
-  let(:valid_session) { {} }
-
   describe "GET index" do
     it "exposes categories" do
       category = Category.create! valid_attributes
@@ -54,7 +52,7 @@ RSpec.describe CategoriesController, :type => :controller do
         }.to change(Category, :count).by(1)
       end
 
-      it "assigns a newly created category as @category" do
+      it "assigns a newly created category as category" do
         post :create, {:category => valid_attributes}
         controller.category.should be_a(Category)
         controller.category.should be_persisted
