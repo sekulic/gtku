@@ -1,13 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "authors/edit", :type => :view do
+  let(:valid_attributes_author) { FactoryGirl.build(:author).attributes.symbolize_keys }
   before(:each) do
-    @author = assign(:author, Author.create!(
-      :first_name => "MyString",
-      :last_name => "MyString",
-      :about => "MyText",
-      :link_profile => "MyText"
-    ))
+    @author = Author.create! valid_attributes_author
   end
 
   it "renders the edit author form" do
@@ -21,7 +17,7 @@ RSpec.describe "authors/edit", :type => :view do
 
       assert_select "textarea#author_about[name=?]", "author[about]"
 
-      assert_select "textarea#author_link_profile[name=?]", "author[link_profile]"
+      assert_select "textarea#author_link_profile[name=?]", "author[link_profile]" 
     end
   end
 end

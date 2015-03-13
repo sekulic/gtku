@@ -6,7 +6,8 @@ RSpec.describe "authors/show", :type => :view do
       :first_name => "First Name",
       :last_name => "Last Name",
       :about => "MyText",
-      :link_profile => "MyText"
+      :link_profile => "MyText",
+      :photo => Rack::Test::UploadedFile.new(Rails.root.join('spec', 'fixtures', 'files', 'eu.jpg'), "image/jpeg") 
     ))
   end
 

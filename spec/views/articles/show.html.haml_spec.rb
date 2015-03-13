@@ -1,25 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "articles/show", :type => :view do
+  let(:valid_attributes) { FactoryGirl.build(:article).attributes.symbolize_keys }
   before(:each) do
-    @article = assign(:article, Article.create!(
-      :title => "Title",
-      :text1 => "MyText",
-      :text2 => "MyText",
-      :text3 => "MyText",
-      :text4 => "MyText",
-      :embed1 => "MyText",
-      :embed2 => "MyText",
-      :embed3 => "MyText",
-      :embed4 => "MyText",
-      :p1desescription => "P1desescription",
-      :p2description => "P2description",
-      :p3description => "P3description",
-      :p4description => "P4description"
-    ))
+   article = Article.create! valid_attributes
   end
 
-  it "renders attributes in <p>" do
+  it "renders attributes" do
     render
     expect(rendered).to match(/Title/)
     expect(rendered).to match(/MyText/)

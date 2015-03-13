@@ -1,22 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "articles/edit", :type => :view do
+  let(:valid_attributes_article) { FactoryGirl.build(:article).attributes.symbolize_keys }
   before(:each) do
-    @article = assign(:article, Article.create!(
-      :title => "MyString",
-      :text1 => "MyText",
-      :text2 => "MyText",
-      :text3 => "MyText",
-      :text4 => "MyText",
-      :embed1 => "MyText",
-      :embed2 => "MyText",
-      :embed3 => "MyText",
-      :embed4 => "MyText",
-      :p1desescription => "MyString",
-      :p2description => "MyString",
-      :p3description => "MyString",
-      :p4description => "MyString"
-    ))
+    assign(:article, Article.create!(valid_attributes_article))
   end
 
   it "renders the edit article form" do
