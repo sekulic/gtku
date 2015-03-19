@@ -10,7 +10,7 @@
     %h2.text-danger=article.title
     %span=article.created_at.to_date.to_s(:long)
     .jus
-      %strong=article.text1
+      %strong=simple_format(article.text1)
     -unless article.photo1.blank?
       .imageHolder
         = image_tag article.photo1(:medium),:width => "100%", :class => 'img-responsive'
@@ -21,7 +21,7 @@
       .embed-responsive.embed-responsive-16by9
         =article.embed1.html_safe   
     .jus
-      %strong=article.text2
+      %strong=simple_format(article.text2)
     -unless article.photo2.blank?
       .imageHolder
         = image_tag article.photo2(:medium),:width => "100%", :class => 'img-responsive'
@@ -32,7 +32,7 @@
       .embed-responsive.embed-responsive-16by9
         =article.embed2.html_safe   
     .jus
-      %strong=article.text3
+      %strong=simple_format(article.text3)
     -unless article.photo3.blank?
       .imageHolder
         = image_tag article.photo3(:medium),:width => "100%", :class => 'img-responsive'
@@ -43,7 +43,7 @@
       .embed-responsive.embed-responsive-16by9
         =article.embed3.html_safe  
     .jus
-      %strong=article.text4
+      %strong=simple_format(article.text4)
     -unless article.photo4.blank?
       .imageHolder
         = image_tag article.photo4(:medium),:width => "100%", :class => 'img-responsive'
