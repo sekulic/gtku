@@ -5,7 +5,7 @@ module ApplicationHelper
     end
   end
   def full_title(page_title)
-    title = "outstanding understanding"
+    title = "the cultural spotter"
     if page_title == ""
     title
     else

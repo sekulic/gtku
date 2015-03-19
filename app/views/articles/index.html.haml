@@ -1,8 +1,7 @@
 .row
   .col-lg-1
   .col-lg-10
-    .linetext
-      %h1='THE CULTURAL SPOTTER'
+    = image_tag "ex.png",:width => "100%", :class => 'img-responsive'
     -idx = 0
     -@articles.each_slice(6) do |articles_by6|
       .row    
