@@ -17,6 +17,7 @@
           -unless article.p1desescription.blank?
           .imageHolder.caption
             %white=article.p1desescription
+      .line-br            
     -unless article.embed1.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed1.html_safe   
@@ -28,6 +29,7 @@
           -unless article.p2description.blank?
           .imageHolder.caption
             %white=article.p2description
+      .line-br
     -unless article.embed2.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed2.html_safe   
@@ -39,6 +41,7 @@
           -unless article.p3description.blank?
           .imageHolder.caption
             %white=article.p3description
+      .line-br            
     -unless article.embed3.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed3.html_safe  
@@ -50,6 +53,7 @@
           -unless article.p4description.blank?
           .imageHolder.caption
             %white=article.p4description
+      .line-br            
     -unless article.embed4.blank?        
       .embed-responsive.embed-responsive-16by9
         =article.embed4.html_safe
