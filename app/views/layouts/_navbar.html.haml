@@ -10,6 +10,7 @@
     .navbar-collapse.collapse{:id => 'navbar-main'}
       %ul.nav.navbar-nav
         %li= link_to "Home", root_path, class: 'bold-text-navbar'
+        %li= link_to "About Us", about_path, class: 'bold-text-navbar'
         -categories = Category.all
         -categories.each do |category|
           %li= link_to category.name, root_path(:category_id => category.id), class: 'bold-text-navbar'
