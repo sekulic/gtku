@@ -10,7 +10,7 @@
     %h2.text-danger=article.title
     %span=article.created_at.to_date.to_s(:long)
     .jus
-      %strong=simple_format(article.text1)
+      %strong.blc=simple_format(article.text1)
     -unless article.photo1.blank?
       .imageHolder
         = image_tag article.photo1(:medium),:width => "100%", :class => 'img-responsive'
@@ -22,7 +22,7 @@
       .embed-responsive.embed-responsive-16by9
         =article.embed1.html_safe   
     .jus
-      %strong=simple_format(article.text2)
+      %strong.blc=simple_format(article.text2)
     -unless article.photo2.blank?
       .imageHolder
         = image_tag article.photo2(:medium),:width => "100%", :class => 'img-responsive'
@@ -34,7 +34,7 @@
       .embed-responsive.embed-responsive-16by9
         =article.embed2.html_safe   
     .jus
-      %strong=simple_format(article.text3)
+      %strong.blc=simple_format(article.text3)
     -unless article.photo3.blank?
       .imageHolder
         = image_tag article.photo3(:medium),:width => "100%", :class => 'img-responsive'
@@ -46,7 +46,7 @@
       .embed-responsive.embed-responsive-16by9
         =article.embed3.html_safe  
     .jus
-      %strong=simple_format(article.text4)
+      %strong.blc=simple_format(article.text4)
     -unless article.photo4.blank?
       .imageHolder
         = image_tag article.photo4(:medium),:width => "100%", :class => 'img-responsive'
@@ -74,7 +74,7 @@
       .row
         .col-md-3.col-xs-3
         .col-md-9.col-xs-9
-          %p.text-danger='About Author'
+          %p.text-danger='About the Author'
       .row
         .col-lg-12
         .col-lg-12
@@ -89,3 +89,9 @@
             =link_to article.author.fullname , article.author.link_profile, :target => "_blank" 
           .jus
             %strong=article.author.about
+    -unless  @authors_articles.empty?
+      .list-group
+        .list-group-item.lgi-heding
+          %b='ARTICLES BY THE SAME AUTHOR'
+        -@authors_articles.each do |authors_article|
+          =link_to authors_article.title , article_path(article), :class => "list-group-item" 
