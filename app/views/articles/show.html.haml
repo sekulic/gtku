@@ -94,4 +94,5 @@
         .list-group-item.lgi-heding
           %b='ARTICLES BY THE SAME AUTHOR'
         -@authors_articles.each do |authors_article|
-          =link_to authors_article.title , article_path(article), :class => "list-group-item" 
+          -unless authors_article.id == article.id
+            =link_to authors_article.title , article_path(article), :class => "list-group-item" 
