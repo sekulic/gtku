@@ -89,7 +89,7 @@
             =link_to article.author.fullname , article.author.link_profile, :target => "_blank" 
           .jus
             %strong=article.author.about
-    -unless  @authors_articles.blank?
+    -unless  @authors_articles.count == 1
       .list-group
         .list-group-item.lgi-heding
           %b='ARTICLES BY THE SAME AUTHOR'
