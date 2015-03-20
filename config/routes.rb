@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :categories
 
   root 'articles#index'
-
+  get 'about' => 'static_pages#about'
   # Example of regular route:
   devise_scope :user do
     get 'administration' => 'devise/sessions#new'

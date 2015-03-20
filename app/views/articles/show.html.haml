@@ -89,10 +89,10 @@
             =link_to article.author.fullname , article.author.link_profile, :target => "_blank" 
           .jus
             %strong=article.author.about
-    -unless  @authors_articles.empty?
+    -unless  @authors_articles.blank?
       .list-group
         .list-group-item.lgi-heding
           %b='ARTICLES BY THE SAME AUTHOR'
         -@authors_articles.each do |authors_article|
           -unless authors_article.id == article.id
-            =link_to authors_article.title , article_path(article), :class => "list-group-item" 
+            =link_to authors_article.title , article_path(authors_article), :class => "list-group-item" 
