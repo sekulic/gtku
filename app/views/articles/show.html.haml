@@ -89,6 +89,7 @@
             =link_to article.author.fullname , article.author.link_profile, :target => "_blank" 
           .jus
             %strong=article.author.about
+    .fb-like-box{:data => {:href=>"https://www.facebook.com/theculturalspotter", :colorscheme=>"light", "show-faces"=>"true", :header=>"true", "show-border"=>"true"}}     
     -unless  @authors_articles.count == 1
       .list-group
         .list-group-item.lgi-heding
