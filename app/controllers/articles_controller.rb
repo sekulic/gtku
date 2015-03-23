@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @authors_articles=Article.where(author_id: article.author_id).order(:created_at).limit(4)
+    @article = Article.find_by_url(params[:id])
+    @authors_articles=Article.where(author_id: @article.author_id).order(:created_at).limit(4)
   end
 
   def new

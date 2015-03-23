@@ -1,4 +1,8 @@
 class Article < ActiveRecord::Base
+  acts_as_url :title
+  def to_param
+    url # or whatever you set :url_attribute to
+  end  
   belongs_to :category
   belongs_to :author   
   validates_presence_of :title, :text1, :photo1,  :p1desescription, :category_id, :author_id

@@ -15,6 +15,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'twitter-bootswatch-rails', '~> 3.2.0'
 gem 'twitter-bootswatch-rails-helpers'
+gem "font-awesome-rails"
+gem 'stringex', '~> 2.5.2'
 gem "cocoon"
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
