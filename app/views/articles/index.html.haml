@@ -22,7 +22,7 @@
               -elsif (idx % 1 == 0)
                 -pnl = 'panel-danger'            
               .tar          
-                = link_to article_path(article) do
+                = link_to "articles/#{article.url}" do
                   .panel{:class => pnl}     
                     .panel-heading 
                       %h3.panel-title.no-underline      

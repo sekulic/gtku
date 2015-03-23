@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :authors
 
-  resources :articles
+  resources :articles, :except => [:index]
 
   resources :categories
 
   root 'articles#index'
+  get 'articles' => redirect('/')
   get 'about' => 'static_pages#about'
   # Example of regular route:
   devise_scope :user do

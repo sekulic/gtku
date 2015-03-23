@@ -62,7 +62,7 @@
     -if current_user.try(:admin?)
       .alert
         =link_to 'Edit Article', edit_article_path(@article), :class => 'btn btn-primary'
-        =link_to 'Back to Articles', articles_path, :class => 'btn btn-danger'
+        =link_to 'Back to Articles', root_path, :class => 'btn btn-danger'
         =link_to t('.destroy', :default => t("helpers.links.destroy")),
                 article_path(@article),
                 :method => 'delete',

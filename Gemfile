@@ -16,7 +16,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'twitter-bootswatch-rails', '~> 3.2.0'
 gem 'twitter-bootswatch-rails-helpers'
 gem "font-awesome-rails"
-gem 'stringex', '~> 2.5.2'
+gem 'stringex'
+gem 'sitemap_generator'
 gem "cocoon"
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
@@ -26,6 +27,7 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'rspec-rails'
