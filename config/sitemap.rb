@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.theculturalspoter.eu"
+SitemapGenerator::Sitemap.default_host = "http://www.theculturalspotter.eu"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -22,5 +22,5 @@ SitemapGenerator::Sitemap.create do
      Article.find_each do |article|
        add "articles/#{article.url}", :lastmod => article.updated_at
      end
-SitemapGenerator::Sitemap.ping_search_engines('http://www.theculturalspoter.eu/sitemap.xml.gz')
+SitemapGenerator::Sitemap.ping_search_engines('http://www.theculturalspotter.eu/sitemap.xml.gz')
 end
