@@ -25,5 +25,4 @@ SitemapGenerator::Sitemap.create do
      Article.find_each do |article|
        add "articles/#{article.url}", :lastmod => article.updated_at
      end
-SitemapGenerator::Sitemap.ping_search_engines('http://www.theculturalspotter.eu/sitemap.xml.gz')
 end
