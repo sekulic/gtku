@@ -18,7 +18,7 @@ gem 'twitter-bootswatch-rails-helpers'
 gem "font-awesome-rails"
 gem 'stringex'
 gem 'sitemap_generator'
-gem "cocoon"
+gem "fog"
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 gem 'shareable'
