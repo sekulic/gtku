@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'articles#index'
   get 'articles' => redirect('/')
   get 'about' => 'static_pages#about'
+  get '/sitemap1.xml.gz' => 'sitemaps#show'
   # Example of regular route:
   devise_scope :user do
     get 'administration' => 'devise/sessions#new'
