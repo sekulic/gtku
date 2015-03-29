@@ -1,9 +1,12 @@
+<% provide(:title, 'contact') %>
+<% content_for :description do %>
+<%= description('We would love to hear your feedback; tell us what you think of our site and our articles! In case you have got a creative idea on what to write about, let us know!') %>
+<% end %>
 <br />
 <div class="row">
 <div class="col-lg-1 col-md-1">
 </div>
 <div class="col-lg-10 col-md-10">
-<% provide(:title, 'Contact') %>
 <div class="well bs-component">
 <h1>Contact</h1>
 <%= form_tag send_mail_path, :onsubmit => 'return validateForm();', :class => 'form-horizontal',
