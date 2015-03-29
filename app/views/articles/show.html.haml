@@ -27,36 +27,45 @@
     .jus
       %strong.blc=simple_format(@article.text2)
     -unless @article.photo2.blank?
-      .imageHolder
-        = image_tag @article.photo2(:medium),:width => "100%", :class => 'img-responsive'
-          -unless @article.p2description.blank?
-          .imageHolder.caption
-            %white=@article.p2description
-      .line-br
+      .row
+        .col-lg-10
+          .imageHolder
+            = image_tag @article.photo2(:medium),:width => "100%", :class => 'img-responsive'
+              -unless @article.p2description.blank?
+              .imageHolder.caption
+                %white=@article.p2description
+          .line-br
+        .col-lg-2
     -unless @article.embed2.blank?        
       .embed-responsive.embed-responsive-16by9
         =@article.embed2.html_safe   
     .jus
       %strong.blc=simple_format(@article.text3)
     -unless @article.photo3.blank?
-      .imageHolder
-        = image_tag @article.photo3(:medium),:width => "100%", :class => 'img-responsive'
-          -unless @article.p3description.blank?
-          .imageHolder.caption
-            %white=@article.p3description
-      .line-br            
+      .row
+        .col-lg-10
+          .imageHolder
+            = image_tag @article.photo3(:medium),:width => "100%", :class => 'img-responsive'
+              -unless @article.p3description.blank?
+              .imageHolder.caption
+                %white=@article.p3description
+          .line-br
+        .col-lg-2              
     -unless @article.embed3.blank?        
       .embed-responsive.embed-responsive-16by9
         =@article.embed3.html_safe  
     .jus
       %strong.blc=simple_format(@article.text4)
     -unless @article.photo4.blank?
-      .imageHolder
-        = image_tag @article.photo4(:medium),:width => "100%", :class => 'img-responsive'
-          -unless @article.p4description.blank?
-          .imageHolder.caption
-            %white=@article.p4description
-      .line-br            
+      .row
+        .col-lg-10
+          .imageHolder
+            = image_tag @article.photo4(:medium),:width => "100%", :class => 'img-responsive'
+              -unless @article.p4description.blank?
+              .imageHolder.caption
+                %white=@article.p4description
+          .line-br
+        .col-lg-10                      
     -unless @article.embed4.blank?        
       .embed-responsive.embed-responsive-16by9
         =@article.embed4.html_safe
