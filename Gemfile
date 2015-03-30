@@ -20,7 +20,7 @@ gem 'stringex'
 gem 'sitemap_generator'
 gem "fog"
 gem "paperclip", "~> 4.2"
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'shareable'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'

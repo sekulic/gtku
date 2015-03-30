@@ -19,6 +19,10 @@
     .col-lg-10
       = f.select :category_id, Category.all.map{|u| [ u.name, u.id ] } , {}, :class => 'form-control'       
   .form-group
+    = f.label 'Country/territory', :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.select :country_id, Country.all.map{|u| [ u.name, u.id ] } , {}, :class => 'form-control'       
+  .form-group
     = f.label 'Author', :class => 'col-lg-2 control-label'
     .col-lg-10
       = f.select :author_id, Author.all.map{|u| [ u.fullname, u.id ] } , {}, :class => 'form-control'       
@@ -39,12 +43,7 @@
     = f.label "Photo 1 description", :class => 'col-lg-2 control-label'
     .col-lg-10
       = f.text_field :p1desescription, class: 'form-control'    
-  .form-group
-    = f.label "Embed content 1", :class => 'col-lg-2 control-label'
-    .col-lg-10
-      = f.text_area :embed1, class: 'form-control'    
-    
-        
+
   .form-group
     = f.label :text2, :class => 'col-lg-2 control-label'
     .col-lg-10
@@ -57,11 +56,7 @@
     = f.label "Photo 2 description", :class => 'col-lg-2 control-label'
     .col-lg-10
       = f.text_field :p2description, class: 'form-control'      
-  .form-group
-    = f.label "Embed content 2", :class => 'col-lg-2 control-label'
-    .col-lg-10
-      = f.text_area :embed2, class: 'form-control'
-  
+
   .form-group
     = f.label :text3, :class => 'col-lg-2 control-label'
     .col-lg-10
@@ -74,10 +69,6 @@
     = f.label "Photo 3 description", :class => 'col-lg-2 control-label'
     .col-lg-10
       = f.text_field :p3description, class: 'form-control'         
-  .form-group     
-    = f.label "Embed content 3", :class => 'col-lg-2 control-label'
-    .col-lg-10
-      = f.text_area :embed3, class: 'form-control'
     
   .form-group
     = f.label :text4, :class => 'col-lg-2 control-label'
@@ -90,12 +81,34 @@
   .form-group
     = f.label "Photo 4 description", :class => 'col-lg-2 control-label'
     .col-lg-10
-      = f.text_field :p4description, class: 'form-control'           
-  .form-group
-    = f.label "Embed content 4", :class => 'col-lg-2 control-label'
-    .col-lg-10
-      = f.text_area :embed4, class: 'form-control'
+      = f.text_field :p4description, class: 'form-control'
 
+  .form-group
+    = f.label :text5, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :text5, class: 'form-control'
+  .form-group
+    = f.label :photo5, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.file_field :photo5, class: 'form-control'
+  .form-group
+    = f.label "Photo 5 description", :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :p5description, class: 'form-control'
+
+  .form-group
+    = f.label :text6, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_area :text6, class: 'form-control'
+  .form-group
+    = f.label :photo6, :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.file_field :photo6, class: 'form-control'
+  .form-group
+    = f.label "Photo 6 description", :class => 'col-lg-2 control-label'
+    .col-lg-10
+      = f.text_field :p6description, class: 'form-control'
+      
   .form-group
     .col-lg-10.col-lg-offset-2
       =f.submit "Save article", :class => 'btn btn-primary'    

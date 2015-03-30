@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323083545) do
+ActiveRecord::Schema.define(version: 20150330102036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,6 @@ ActiveRecord::Schema.define(version: 20150323083545) do
     t.text     "text2"
     t.text     "text3"
     t.text     "text4"
-    t.text     "embed1"
-    t.text     "embed2"
-    t.text     "embed3"
-    t.text     "embed4"
     t.string   "p1desescription"
     t.string   "p2description"
     t.string   "p3description"
@@ -52,6 +48,19 @@ ActiveRecord::Schema.define(version: 20150323083545) do
     t.integer  "category_id"
     t.integer  "author_id"
     t.string   "url"
+    t.string   "photo5_file_name"
+    t.string   "photo5_content_type"
+    t.integer  "photo5_file_size"
+    t.datetime "photo5_updated_at"
+    t.string   "photo6_file_name"
+    t.string   "photo6_content_type"
+    t.integer  "photo6_file_size"
+    t.datetime "photo6_updated_at"
+    t.integer  "country_id"
+    t.string   "p5description"
+    t.string   "p6description"
+    t.text     "text5"
+    t.text     "text6"
   end
 
   create_table "authors", force: true do |t|
@@ -69,6 +78,13 @@ ActiveRecord::Schema.define(version: 20150323083545) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

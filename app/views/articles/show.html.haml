@@ -20,10 +20,7 @@
               .imageHolder.caption
                 %white=@article.p1desescription
           .line-br        
-        .col-lg-2
-    -unless @article.embed1.blank?        
-      .embed-responsive.embed-responsive-16by9
-        =@article.embed1.html_safe   
+        .col-lg-2   
     .jus
       %strong.blc=simple_format(@article.text2)
     -unless @article.photo2.blank?
@@ -35,10 +32,7 @@
               .imageHolder.caption
                 %white=@article.p2description
           .line-br
-        .col-lg-2
-    -unless @article.embed2.blank?        
-      .embed-responsive.embed-responsive-16by9
-        =@article.embed2.html_safe   
+        .col-lg-2  
     .jus
       %strong.blc=simple_format(@article.text3)
     -unless @article.photo3.blank?
@@ -50,10 +44,7 @@
               .imageHolder.caption
                 %white=@article.p3description
           .line-br
-        .col-lg-2              
-    -unless @article.embed3.blank?        
-      .embed-responsive.embed-responsive-16by9
-        =@article.embed3.html_safe  
+        .col-lg-2               
     .jus
       %strong.blc=simple_format(@article.text4)
     -unless @article.photo4.blank?
@@ -65,10 +56,32 @@
               .imageHolder.caption
                 %white=@article.p4description
           .line-br
-        .col-lg-10                      
-    -unless @article.embed4.blank?        
-      .embed-responsive.embed-responsive-16by9
-        =@article.embed4.html_safe
+        .col-lg-2  
+    .jus
+      %strong.blc=simple_format(@article.text5)
+    -unless @article.photo5.blank?
+      .row
+        .col-lg-10
+          .imageHolder
+            = image_tag @article.photo5(:medium),:width => "100%", :class => 'img-responsive'
+              -unless @article.p5description.blank?
+              .imageHolder.caption
+                %white=@article.p5description
+          .line-br
+        .col-lg-2  
+    .jus
+      %strong.blc=simple_format(@article.text6)
+    -unless @article.photo6.blank?
+      .row
+        .col-lg-10
+          .imageHolder
+            = image_tag @article.photo6(:medium),:width => "100%", :class => 'img-responsive'
+              -unless @article.p6description.blank?
+              .imageHolder.caption
+                %white=@article.p6description
+          .line-br
+        .col-lg-2                    
+                          
     %br    
       =render_shareable :buttons=> [ 'facebook','twitter', 'google_plus']
     -if current_user.try(:admin?)
