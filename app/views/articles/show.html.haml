@@ -15,7 +15,7 @@
         %span.text-danger
           %b
             = succeed @article.country.name do
-              %b.text-normal="Country/territory:&nbsp;&nbsp;".html_safe           
+              %b.text-normal="Country/Region:&nbsp;&nbsp;".html_safe           
       .col-md-4.col-xs-4
         .rgh
           %span.text-warning
@@ -33,7 +33,10 @@
               .imageHolder.caption
                 %white=@article.p1desescription
           .line-br        
-        .col-lg-2   
+        .col-lg-2  
+    .row
+      .col-lg-12.add-google
+        = render 'googleadd_show_text'         
     .jus
       %strong.blc=simple_format(@article.text2)
     -unless @article.photo2.blank?
@@ -94,7 +97,9 @@
                 %white=@article.p6description
           .line-br
         .col-lg-2                    
-                          
+    .row
+      .col-lg-12.add-google
+        = render 'googleadd_show_textend'                          
     %br    
       =render_shareable :buttons=> [ 'facebook','twitter', 'google_plus']
     -if current_user.try(:admin?)
@@ -127,7 +132,10 @@
             =link_to @article.author.fullname , @article.author.link_profile, :target => "_blank" 
           .jus
             %strong=@article.author.about
-    .fb-like-box{:data => {:href=>"https://www.facebook.com/theculturalspotter", :colorscheme=>"light", "show-faces"=>"true", :header=>"true", "show-border"=>"true"}}     
+    .fb-page{:data => {:href=>"https://www.facebook.com/theculturalspotter", "hide-cover"=>"false", "show-facepile"=>"true", "show-posts"=>"false"}}  
+    .row
+      .col-lg-12.index-rgh
+        = render 'googleadd_show_right'
     -unless  @authors_articles.count == 1
       .list-group
         .list-group-item.lgi-heding

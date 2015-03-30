@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :articles, :except => [:index]
 
   resources :categories
-
+  post 'search_country' => 'articles#search_country'
+  get 'search_country' => 'articles#search_country' 
   root 'articles#index'
   get 'articles' => redirect('/')
   get 'about' => 'static_pages#about'

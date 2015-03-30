@@ -1,10 +1,12 @@
 -provide(:title, 'outstanding understanding')
 -content_for :description do
   = description('The Cultural Spotter is an online magazine that aims to show how colorful the world is by describing different lifestyles, culinary and cultural traditions and different points of view through a wide range of articles.')
-.row
-  .col-lg-1
-  .col-lg-10
+.row.home-pd
+  .col-lg-12.add-google
+    = render 'googleadd_index_top'
+  .col-lg-9.col-md-9
     = image_tag "ex.png",:width => "100%", :class => 'img-responsive'
+    %h2=@note
     -idx = 0
     -@articles.each_slice(6) do |articles_by6|
       .row    
@@ -45,4 +47,19 @@
     .row
       .col-lg-12
         %center= will_paginate @articles                                     
-  .col-lg-1
+  .col-lg-3.col-md-3
+    .search-holder
+      = form_tag search_country_path, :multipart => true, method: :post, :html => { :class => 'form-horizontal' } do
+        .col-lg-12
+          %b
+            %h5.text-danger= 'COUNTRIES'
+        .form-group
+          .col-lg-12
+            = select_tag :country_id,  options_for_select(Country.all.map{|u| [ u.name, u.id ] }), prompt: "Select the country", :class => 'form-control'
+        .form-group
+          .col-lg-12
+            = submit_tag "SEARCH", :class => 'btn btn-sm btn-primary'
+    .fb-page{:data => {:href=>"https://www.facebook.com/theculturalspotter", "hide-cover"=>"false", "show-facepile"=>"true", "show-posts"=>"false"}}   
+    .row
+      .col-lg-12.index-rgh
+        = render 'googleadd_index_right'

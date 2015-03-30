@@ -2,13 +2,37 @@ class ArticlesController < ApplicationController
   include ApplicationHelper
   before_action :set_article, only: [:show, :edit, :update, :destroy]  
   before_action :check_isadmin?, only: [:new, :edit, :update, :create, :destroy] 
-  
+
+  def search_country
+    if params.has_key?(:country_id)
+      if params[:country_id].empty?
+          @articles = Article.all.paginate(page: params[:page], per_page: 6).order('created_at DESC')
+          @note = ""        
+      else
+        @articles = Article.where(country_id: params[:country_id]).paginate(page: params[:page], per_page: 6).order('created_at DESC')
+        @country = Country.find(params[:country_id])
+        @note = "Articles for #{@country.name}"
+        if @articles.empty?
+          @articles = Article.all.paginate(page: params[:page], per_page: 6).order('created_at DESC')
+          @note = "There are no articles for #{@country.name}, for now. Check out our articles."
+        end        
+      end
+      render action: 'index'
+    end
+  end  
   def index
     if request.get?
       if params.has_key?(:category_id)
         @articles =Article.where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 6).order('created_at DESC')
+        @category = Category.find(params[:category_id])
+        @note = "Articles for category: #{@category.name}"
+        if @articles.empty?
+          @articles = Article.all.paginate(page: params[:page], per_page: 6).order('created_at DESC')
+          @note = "There are no articles for this category, for now. Check out our articles."
+        end        
       else
         @articles =Article.paginate(page: params[:page], per_page: 6).order('created_at DESC')
+        @note = ""
       end
     end
   end
