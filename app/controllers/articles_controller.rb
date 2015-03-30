@@ -11,10 +11,10 @@ class ArticlesController < ApplicationController
       else
         @articles = Article.where(country_id: params[:country_id]).paginate(page: params[:page], per_page: 6).order('created_at DESC')
         @country = Country.find(params[:country_id])
-        @note = "Articles for #{@country.name}"
+        @note = "Articles about #{@country.name}"
         if @articles.empty?
           @articles = Article.all.paginate(page: params[:page], per_page: 6).order('created_at DESC')
-          @note = "There are no articles for #{@country.name}, for now. Check out our articles."
+          @note = "There are no articles about #{@country.name}, yet. Consider writing one."
         end        
       end
       render action: 'index'
@@ -25,10 +25,10 @@ class ArticlesController < ApplicationController
       if params.has_key?(:category_id)
         @articles =Article.where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 6).order('created_at DESC')
         @category = Category.find(params[:category_id])
-        @note = "Articles for category: #{@category.name}"
+        @note = ""
         if @articles.empty?
           @articles = Article.all.paginate(page: params[:page], per_page: 6).order('created_at DESC')
-          @note = "There are no articles for this category, for now. Check out our articles."
+          @note = "There are no articles for this category, yet. Consider writing one."
         end        
       else
         @articles =Article.paginate(page: params[:page], per_page: 6).order('created_at DESC')
