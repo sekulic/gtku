@@ -15,13 +15,13 @@
         %span.text-danger
           %b
             = succeed @article.country.name do
-              %b.text-normal="Country/territory:&nbsp;:&nbsp;".html_safe           
+              %b.text-normal="Country/territory:&nbsp;&nbsp;".html_safe           
       .col-md-4.col-xs-4
         .rgh
           %span.text-warning
             %b
               = succeed @article.category.name do
-                %b.text-normal="Category:&nbsp;:&nbsp;".html_safe 
+                %b.text-normal="Category:&nbsp;&nbsp;".html_safe 
     .jus
       %strong.blc=simple_format(@article.text1)
     -unless @article.photo1.blank?
