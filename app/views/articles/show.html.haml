@@ -8,7 +8,20 @@
   .col-lg-1.col-md-1
   .col-lg-7.col-md-7
     %h2.text-danger=@article.title
-    %span=@article.created_at.to_date.to_s(:long)
+    .row
+      .col-md-4.col-xs-4
+        %span=@article.created_at.to_date.to_s(:long)
+      .col-md-4.col-xs-4
+        %span.text-danger
+          %b
+            = succeed @article.country.name do
+              %b.text-normal="Country/territory:&nbsp;:&nbsp;".html_safe           
+      .col-md-4.col-xs-4
+        .rgh
+          %span.text-warning
+            %b
+              = succeed @article.category.name do
+                %b.text-normal="Category:&nbsp;:&nbsp;".html_safe 
     .jus
       %strong.blc=simple_format(@article.text1)
     -unless @article.photo1.blank?

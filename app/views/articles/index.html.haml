@@ -35,9 +35,11 @@
                       .redO
                         %center=article.description
                 .row
-                  .col-md-6.col-xs-6
+                  .col-md-4.col-xs-4
                     =article.created_at.to_date.to_s(:medium)
-                  .col-md-6.col-xs-6
+                  .col-md-4.col-xs-4
+                    %p.text-danger=article.country.name             
+                  .col-md-4.col-xs-4
                     .rgh
                       =article.category.name 
     .row

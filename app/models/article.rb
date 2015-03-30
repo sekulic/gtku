@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
     url
   end  
   belongs_to :category
-  belongs_to :country  
+  belongs_to :country, :class_name => Country  
   belongs_to :author   
   validates_presence_of :title, :text1, :photo1,  :p1desescription, :category_id, :author_id
   has_attached_file :photo6, :styles => { :medium => "800x600>", :thumb => "300x300>" }
