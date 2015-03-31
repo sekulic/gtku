@@ -11,5 +11,12 @@ module ApplicationHelper
     else
       "#{title} | #{page_title}"
     end
-  end  
+  end 
+  def first_time_visiting?
+    if session[:first_time].nil?
+      return true
+    else
+      return false
+    end
+  end     
 end

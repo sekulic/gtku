@@ -111,7 +111,7 @@
     .jumbotron.jumb
       .row
         .col-md-3.col-xs-3
-        .col-md-9.col-xs-9
+        .col-md-9.col-xs-9          
           %p.text-danger='About the Author'
       .row
         .col-lg-12
@@ -135,3 +135,4 @@
         -@authors_articles.each do |authors_article|
           -unless authors_article.id == @article.id
             =link_to authors_article.title , article_path(authors_article), :class => "list-group-item" 
+= render 'shared/fbpopup'            
