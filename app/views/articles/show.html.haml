@@ -22,6 +22,7 @@
             %b
               = succeed @article.category.name do
                 %b.text-normal="Category:&nbsp;&nbsp;".html_safe 
+    %br              
     .jus
       %strong.blc=simple_format(@article.text1)
     -unless @article.photo1.blank?
@@ -33,10 +34,7 @@
               .imageHolder.caption
                 %white=@article.p1desescription
           .line-br        
-        .col-lg-2  
-    .row
-      .col-lg-12.add-google
-        = render 'googleadd_show_text'         
+        .col-lg-2       
     .jus
       %strong.blc=simple_format(@article.text2)
     -unless @article.photo2.blank?
@@ -96,10 +94,7 @@
               .imageHolder.caption
                 %white=@article.p6description
           .line-br
-        .col-lg-2                    
-    .row
-      .col-lg-12.add-google
-        = render 'googleadd_show_textend'                          
+        .col-lg-2                                          
     %br    
       =render_shareable :buttons=> [ 'facebook','twitter', 'google_plus']
     -if current_user.try(:admin?)
@@ -133,9 +128,6 @@
           .jus
             %strong=@article.author.about
     .fb-page{:data => {:href=>"https://www.facebook.com/theculturalspotter", "hide-cover"=>"false", "show-facepile"=>"true", "show-posts"=>"false"}}  
-    .row
-      .col-lg-12.index-rgh
-        = render 'googleadd_show_right'
     -unless  @authors_articles.count == 1
       .list-group
         .list-group-item.lgi-heding

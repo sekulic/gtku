@@ -2,8 +2,6 @@
 -content_for :description do
   = description('The Cultural Spotter is an online magazine that aims to show how colorful the world is by describing different lifestyles, culinary and cultural traditions and different points of view through a wide range of articles.')
 .row.home-pd
-  .col-lg-12.add-google
-    = render 'googleadd_index_top'
   .col-lg-9.col-md-9
     = image_tag "ex.png",:width => "100%", :class => 'img-responsive'
     %h2=@note
@@ -60,6 +58,3 @@
           .col-lg-12
             = submit_tag "SEARCH", :class => 'btn btn-sm btn-primary'
     .fb-page{:data => {:href=>"https://www.facebook.com/theculturalspotter", "hide-cover"=>"false", "show-facepile"=>"true", "show-posts"=>"false"}}   
-    .row
-      .col-lg-12.index-rgh
-        = render 'googleadd_index_right'
