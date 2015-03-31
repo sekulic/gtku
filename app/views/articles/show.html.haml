@@ -9,14 +9,14 @@
   .col-lg-7.col-md-7
     %h2.text-danger=@article.title
     .row
-      .col-md-4.col-xs-4
+      .col-lg-4.col-md-4
         %span=@article.created_at.to_date.to_s(:long)
-      .col-md-4.col-xs-4
+      .col-lg-4.col-md-4
         %span.text-danger
           %b
             = succeed @article.country.name do
               %b.text-normal="Country/Region:&nbsp;&nbsp;".html_safe           
-      .col-md-4.col-xs-4
+      .col-lg-4.col-md-4
         .rgh
           %span.text-warning
             %b
