@@ -47,14 +47,15 @@
         %center= will_paginate @articles                                     
   .col-lg-3.col-md-3
     .search-holder
-      = form_tag search_country_path, :multipart => true, method: :post, :html => { :class => 'form-horizontal' } do
-        .col-lg-12
-          %b
-            %h5.text-danger= 'COUNTRIES'
-        .form-group
+      %div
+        =form_tag search_country_path, :multipart => true, method: :post, :html => { :class => 'form-horizontal' } do
           .col-lg-12
-            = select_tag :country_id,  options_for_select(Country.all.map{|u| [ u.name, u.id ] }), prompt: "Select a Country", :class => 'form-control'
-        .form-group
-          .col-lg-12
-            = submit_tag "SEARCH", :class => 'btn btn-sm btn-primary'
+            %b
+              %h5.text-danger= 'COUNTRIES'
+          .form-group
+            .col-lg-12
+              = select_tag :country_id,  options_for_select(Country.all.map{|u| [ u.name, u.id ] }), prompt: "Select a Country", :class => 'form-control'
+          .form-group
+            .col-lg-12
+              = submit_tag "SEARCH", :class => 'btn btn-sm btn-primary'
     .fb-page{:data => {:href=>"https://www.facebook.com/theculturalspotter", "hide-cover"=>"false", "show-facepile"=>"true", "show-posts"=>"false"}}   
