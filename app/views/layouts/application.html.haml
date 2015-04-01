@@ -3,8 +3,13 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title=full_title(yield(:title))
-    %meta{:content => content_for?(:description) ? yield(:description) : "the cultural spotter", :name => "description"}
+    %meta{:content => content_for?(:description) ? yield(:description) : "The Cultural Spotter - outstanding understanding", :name => "description"}
     %meta{:name=> "viewport", :content=> "width=device-width, initial-scale=1, maximum-scale=1"}
+    %meta{:content => content_for?(:og_title) ? yield(:og_title) : "The Cultural Spotter - outstanding understanding", :property => "og:title"}/
+    %meta{:content => content_for?(:url) ? yield(:url) : "http://www.theculturalspotter.eu", :property => "og:url"}/
+    %meta{:content => content_for?(:description) ? yield(:description) : "The Cultural Spotter - outstanding understanding", :property => "og:description"}/
+    %meta{:content => "The Cultural Spotter", :property => "og:site_name"}/
+    %meta{:content => content_for?(:og_image) ? yield(:og_image) : "http://www.theculturalspotter.eu/assets/about.png", :property => "og:image"}/
     = stylesheet_link_tag    'journal', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'journal', 'data-turbolinks-track' => true
     = csrf_meta_tags

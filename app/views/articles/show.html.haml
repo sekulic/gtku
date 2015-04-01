@@ -1,3 +1,6 @@
+-provide(:url, request.original_url)
+-provide(:og_title, @article.title)
+-provide(:og_image, image_url(@article.photo1(:medium)))
 -provide(:title, @article.title)
 -content_for :description do
   = description(@article.description)

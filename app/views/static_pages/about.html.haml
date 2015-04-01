@@ -1,4 +1,7 @@
 -provide(:title, 'about')
+-provide(:og_title, 'About The Cultural Spotter')
+-provide(:og_image, image_url("about.png"))
+-provide(:url, request.original_url)
 -content_for :description do
   = description('The Cultural Spotter is an online magazine that aims to show how colorful the world is by describing different lifestyles, culinary and cultural traditions and different points of view through a wide range of articles.')
 .row
