@@ -18,13 +18,6 @@ Rails.application.routes.draw do
     get 'administration' => 'devise/sessions#new'
   end
 
-  if Rails.env.production?
-    constraints(:host => /^(?!rocky-plateau-7514\.com)/i) do
-      match "/(*path)" => redirect {
-        |params, req| "http://www.theculturalspotter.eu/#{params[:path]}"
-        },  via: [:get, :post]
-    end
-  end
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

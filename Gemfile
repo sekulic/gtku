@@ -24,6 +24,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'shareable'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
+gem 'rack-canonical-hostname', :require => 'rack/canonical_host'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
