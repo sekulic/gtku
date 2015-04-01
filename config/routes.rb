@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   if Rails.env.production?
     constraints(:host => /^(?!rocky-plateau-7514\.com)/i) do
       match "/(*path)" => redirect {
-        |params, req| "http://www.theculturalspotter.com/#{params[:path]}"
+        |params, req| "http://www.theculturalspotter.eu/#{params[:path]}"
         },  via: [:get, :post]
     end
   end
