@@ -14,7 +14,7 @@
         -if author.link_profile.blank?
           %h4=author.fullname
           .jus
-            %strong=author.about          
+            %strong=simple_format(author.about)          
         -else
           %h4
             =link_to author.fullname , author.link_profile, :target => "_blank"
