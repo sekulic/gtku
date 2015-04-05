@@ -1,11 +1,11 @@
 -provide(:title, 'outstanding understanding')
 -provide(:og_title, 'The Cultural Spotter - outstanding understanding')
--provide(:og_image, image_url("about.png"))
+-provide(:og_image, "https://s3.amazonaws.com/gtku/assets/about.png")
 -content_for :description do
   = description('The Cultural Spotter is an online magazine that aims to show how colorful the world is by describing different lifestyles, culinary and cultural traditions and different points of view through a wide range of articles.')
 .row.home-pd
   .col-lg-9.col-md-9
-    = image_tag "ex.png",:width => "100%", :class => 'img-responsive'
+    %img{ :src => "https://s3.amazonaws.com/gtku/assets/frontpage.png", :width => "100%", :class => 'img-responsive' }
     %h2=@note
     -idx = 0
     -@articles.each_slice(6) do |articles_by6|
