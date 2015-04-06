@@ -32,7 +32,7 @@
       .row
         .col-lg-10
           .imageHolder
-            = image_tag @article.photo1(:medium),:width => "100%", :class => 'img-responsive'
+            = image_tag @article.photo1(:original),:width => "100%", :class => 'img-responsive'
               -unless @article.p1desescription.blank?
               .imageHolder.caption
                 %white=@article.p1desescription
@@ -44,7 +44,7 @@
       .row
         .col-lg-10
           .imageHolder
-            = image_tag @article.photo2(:medium),:width => "100%", :class => 'img-responsive'
+            = image_tag @article.photo2(:original),:width => "100%", :class => 'img-responsive'
               -unless @article.p2description.blank?
               .imageHolder.caption
                 %white=@article.p2description
@@ -56,7 +56,7 @@
       .row
         .col-lg-10
           .imageHolder
-            = image_tag @article.photo3(:medium),:width => "100%", :class => 'img-responsive'
+            = image_tag @article.photo3(:original),:width => "100%", :class => 'img-responsive'
               -unless @article.p3description.blank?
               .imageHolder.caption
                 %white=@article.p3description
@@ -68,7 +68,7 @@
       .row
         .col-lg-10
           .imageHolder
-            = image_tag @article.photo4(:medium),:width => "100%", :class => 'img-responsive'
+            = image_tag @article.photo4(:original),:width => "100%", :class => 'img-responsive'
               -unless @article.p4description.blank?
               .imageHolder.caption
                 %white=@article.p4description
@@ -80,7 +80,7 @@
       .row
         .col-lg-10
           .imageHolder
-            = image_tag @article.photo5(:medium),:width => "100%", :class => 'img-responsive'
+            = image_tag @article.photo5(:original),:width => "100%", :class => 'img-responsive'
               -unless @article.p5description.blank?
               .imageHolder.caption
                 %white=@article.p5description
@@ -92,7 +92,7 @@
       .row
         .col-lg-10
           .imageHolder
-            = image_tag @article.photo6(:medium),:width => "100%", :class => 'img-responsive'
+            = image_tag @article.photo6(:original),:width => "100%", :class => 'img-responsive'
               -unless @article.p6description.blank?
               .imageHolder.caption
                 %white=@article.p6description
