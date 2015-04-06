@@ -129,7 +129,7 @@
           %h4
             =link_to @article.author.fullname , @article.author.link_profile, :target => "_blank" 
           .jus
-            %strong=@article.author.about
+            %strong=simple_format(@article.author.about)
     .fb-page{:data => {:href=>"https://www.facebook.com/theculturalspotter", "hide-cover"=>"false", "show-facepile"=>"true", "show-posts"=>"false"}}  
     -unless  @authors_articles.count == 1
       .list-group
